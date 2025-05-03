@@ -5,7 +5,7 @@ export default function Resume({ data }) {
     <div className="flex flex-row md:flex-row text-gray-800 font-sans max-w-[800px] mx-auto border bg-white rounded-lg overflow-hidden shadow-md">
 
       {/* Sidebar (Left Side) */}
-      <div className="md:w-[25%] bg-[#1A3E4C] text-white p-6 flex flex-col">
+      <div className="md:w-[30%] max-w-[40%] bg-[#1A3E4C] text-white p-6 flex flex-col shrink-0 min-w-0 overflow-hidden">
         {/* Image Section */}
         <div className="mb-6 flex justify-center">
           <img
@@ -16,29 +16,28 @@ export default function Resume({ data }) {
         </div>
 
         {/* Content Section */}
-        <div className="flex flex-col gap-4">
-          <div>
+        <div className="flex flex-col gap-4 w-full break-words overflow-hidden whitespace-normal">
+          <div className="w-full break-words overflow-hidden">
             <p className="text-sm mb-1">{data.address}</p>
             <p className="text-sm mb-1">{data.phone}</p>
             <p className="text-sm mb-4">{data.email}</p>
           </div>
 
-          <div>
+          <div className="w-full break-words overflow-hidden">
             <h3 className="text-lg font-semibold mb-1">SUMMARY</h3>
             <p className="text-sm">{data.summary}</p>
           </div>
 
-          <div>
+          <div className="w-full break-words overflow-hidden">
             <h3 className="text-lg font-semibold mb-1">SKILLS</h3>
             <ul className="list-disc list-inside text-sm">
               {data.skills.map((skill, i) => (
-                <li key={i}>{skill}</li>
+                <li key={i} className="break-words">{skill}</li>
               ))}
             </ul>
           </div>
         </div>
       </div>
-
 
 
       {/* Main Content (Right Side) */}
@@ -62,10 +61,16 @@ export default function Resume({ data }) {
 
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-2">EDUCATION</h2>
-          <p className="text-sm font-medium">
-            {data.education.year} - {data.education.degree}
-          </p>
-          <p className="text-sm">{data.education.institution}</p>
+          {data.education && data.education.length > 0 && (
+            data.education.map((edu, index) => (
+              <div key={index} className="mb-2">
+                <p className="text-sm font-medium">
+                  {edu.year} - {edu.degree}
+                </p>
+                <p className="text-sm">{edu.institution}</p>
+              </div>
+            ))
+          )}
         </div>
 
         <div className="mb-6">
