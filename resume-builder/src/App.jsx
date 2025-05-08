@@ -106,23 +106,24 @@ export default function App() {
       {/* Form */}
       <div className="w-full lg:w-1/2 bg-white p-6 rounded shadow-lg overflow-y-auto max-h-screen">
         <h2 className="text-xl font-bold mb-4 text-center text-blue-700">Resume Template</h2>
-        <label className="block font-semibold mb-1 text-gray-700">Name</label>
-        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" value={formData.name} onChange={(e) => updateField("name", e.target.value)} />
+
+        <label className="block font-bold mb-1 text-gray-700">Name</label>
+        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold" value={formData.name} onChange={(e) => updateField("name", e.target.value)} />
 
         <label className="block font-semibold mb-1 text-gray-700">Profile Image URL</label>
-        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" value={formData.image} onChange={(e) => updateField("image", e.target.value)} />
+        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold" value={formData.image} onChange={(e) => updateField("image", e.target.value)} />
 
         <label className="block font-semibold mb-1 text-gray-700">Address</label>
-        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" value={formData.address} onChange={(e) => updateField("address", e.target.value)} />
+        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold" value={formData.address} onChange={(e) => updateField("address", e.target.value)} />
 
         <label className="block font-semibold mb-1 text-gray-700">Phone</label>
-        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" value={formData.phone} onChange={(e) => updateField("phone", e.target.value)} />
+        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold" value={formData.phone} onChange={(e) => updateField("phone", e.target.value)} />
 
         <label className="block font-semibold mb-1 text-gray-700">Email</label>
-        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" value={formData.email} onChange={(e) => updateField("email", e.target.value)} />
+        <input className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold" value={formData.email} onChange={(e) => updateField("email", e.target.value)} />
 
         <label className="block font-semibold mb-1 text-gray-700">Summary</label>
-        <textarea className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500" value={formData.summary} onChange={(e) => updateField("summary", e.target.value)} />
+        <textarea className="border p-2 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold" value={formData.summary} onChange={(e) => updateField("summary", e.target.value)} />
 
         {/* Experience Section */}
         <h3 className="font-semibold mt-4 text-red-700">Experience</h3>
